@@ -10,11 +10,11 @@ Version control is a system that **records changes to a file or a set of files o
 
 ### What is a repository?
 
-Storage space where the projects live. Can be a folder on local computer or can be storage space on another online host such as Github.
+Storage space where the projects live. Can be a folder on local computer or can be storage space on another online host such as Github. **Github is a web-based git repository hosting service**
 
 ### What is Git?
 
-Git is a Distributed Version Control tool. It supports distributed non-linear parallel workflows, allows the team of developers work together on same project even remotely and enables them to easily merge their changes into one source.
+**Git is a Distributed Version Control tool**. It supports distributed non-linear parallel workflows, allows the team of developers work together on same project even remotely and enables them to easily merge their changes into one source.
 
 ### Workflow of git
 
@@ -66,15 +66,19 @@ Git is a Distributed Version Control tool. It supports distributed non-linear pa
 - <git config --global user.email "yourmailid">
   Configs can be done once. Not needed everytime
 - <git config --list>
-- <git clone>
+- <git clone repourl>
   Creates a copy of remote repository on your local machine
 - <git fork>
   Creates a copy of remote repository on your github account
 - <git remote add origin repolink>
-  Eg: <git remote add https://github.com/BhavanaMP/gitlearn.git>
+  Eg: <git remote add origin https://github.com/BhavanaMP/gitlearn.git>
   Lets you add or link a remote repository to your created local repository. It creates alias of your remote repo, named as origin, in your local repo.
 - <git remote -v>
   Allows us check if the remote repo is linked to our local repo
+- <git remote rename origin desiredname>
+  Lets us rename the alias origin to your desired name
+- <git remote remove branchname> or <git remote rm branchname>
+  Removes the remote repository from our local repo
 - <git branch>
   Shows which branch you are on currently
 - <git branch branchname>
@@ -82,9 +86,19 @@ Git is a Distributed Version Control tool. It supports distributed non-linear pa
   Creates a new branch in our local repository. It creates a branch from the source repo which we are currently on. So all commits in that source branch is copied to this new branch.
 - <git branch -m oldbranchname newbranchname>
   Helps to rename the local repo branch names.
+- <git branch -m oldbranchname newbranchname>
+  <git push alias :oldbranchname newbranchname>
+  Helps to rename the branch name in local repo and pushing it to remote repo renames the branch in the remote repo as well. Note that oldbranchname exists in remote repo.
+  Eg: <git branch -m test staging>
+  <git push origin :test staging>
+- <git branch -d branchname>
+  Delete branch from the local repository
 - <git checkout branchname>
-  Eg: <git checkout dev>
-  Allows us to switch the pointing out branch
+  Eg: <git checkout  dev>
+  Switch to that given existing branch
+- <git checkout -b branchname>
+  Eg: <git checkout -b dev>
+  Allows us to create a new branch with given branch name switch to that new branch
 - <git add "filename"> or <git add .>
   To add specified or all files to staging area before comitting
 - <git rm --cached "filename">
@@ -106,6 +120,8 @@ Git is a Distributed Version Control tool. It supports distributed non-linear pa
 - <git push aliasofremoterepo branchname>
   Eg: <git push origin master>, <git push origin dev>
   Lets you push your local changes from your local repo to the remote repo branch. Note that origin is  the alias of remote repo.  Give credentials for remote repo if asked while pushing.
+- <git push alias --delete branchname>
+  Deletes the branch in the remote repo Eg: <git push origin --delete somebranch>
 - <git pull origin master>
   Lets you copy all the files from the master branch of remote repo to your local repo
 
