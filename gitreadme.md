@@ -92,5 +92,7 @@ Git is a Distributed Version Control tool. It supports distributed non-linear pa
   - Gives the commit history along aith commit hash id, author, commit message and time
 - <git show commithashid>
   - commithashid with first 7 to 8 letters of full commit hash id works. Press q to end.
+- <git ls-files>
+  - Shows the files that are tracked by our local git repo. If new file is created and is not yet added to the staging using git add command, then git can't track that new file. Adding it to staging area helps git to start tracking this new files thereafter.
 
 ![workflow](images/git_basic_commands.png)
