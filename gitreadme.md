@@ -93,14 +93,20 @@ Git is a Distributed Version Control tool. It supports distributed non-linear pa
   Commits your changes from staging area to your local repository
 - <git commit --amend>
 - <git stash>
+  When we want to save the current changes in the working branch but want to go back to clean working branch. (in case of checkout to another branches)
+- <git stash pop>
+  Get back the stashed changes
 - <git cherrypick>
 - <git pull origin master>
   Lets you copy all the files from the master branch of remote repo to your local repo
 - <git push aliasofremoterepo branchname>
   Eg: <git push origin master>, <git push origin dev>
   Lets you push your local changes from your local repo to the remote repo branch. Note that origin is  the alias of remote repo.  Give credentials for remote repo if asked while pushing.
-- <git rebase>
-- <git merge branchname>
+- <git rebase branchname>
+  Rebase is used when changes made in one existing branch needs to be reflected in another branch. When we created a local branch from master at C2 commit, then we add a new commit C4 to this local branch, meanwhile someone did commit C3 to Master, then we can get those changes reflected in our local branch using rebase, such that it looks like the commits are made sequentially. C1, C2, C3, C4. Eg: <git rebase master> we essentially rebasing our local branch from master.
+- <git merge branchnametobemerged>
+  Lets us to merge changes from a branch to another branch. Checkout the branch to which you want to merge changes to. Now run the command with branchnametobemerged
+  Eg: Our branchnametobemerged is dev. We want to merge this branch changes to test or master. Then we checkout to test or master and run <git merge dev>. This will also copy the commits of the merged branch as it is. Can be checked with git log
 - <git fetch>
 - <git status>
 - <git log>
