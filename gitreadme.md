@@ -61,38 +61,55 @@ Git is a Distributed Version Control tool. It supports distributed non-linear pa
 ### Commands
 
 - <git init>
-  - Initiates a new empty local git repository. Here, .git will be created.
+  Initiates a new empty local git repository. Here, .git will be created.
 - <git config --global user.name "yourname">
-- <git config --global user.email "yourmailid"> # configs can be done once. Not needed everytime
+- <git config --global user.email "yourmailid">
+  Configs can be done once. Not needed everytime
 - <git config --list>
 - <git clone>
-  - Creates a copy of remote repository on your local machine
+  Creates a copy of remote repository on your local machine
 - <git fork>
-  - Creates a copy of remote repository on your github account
+  Creates a copy of remote repository on your github account
 - <git remote add origin repolink>
-  - Lets you add a remote repository to your created local repository
-- <git pull origin master>
-  - Lets you copy all the files from the master branch of remote repo to your local repo
+  Eg: <git remote add https://github.com/BhavanaMP/gitlearn.git>
+  Lets you add or link a remote repository to your created local repository. It creates alias of your remote repo, named as origin, in your local repo.
+- <git remote -v>
+  Allows us check if the remote repo is linked to our local repo
 - <git branch>
+  Shows which branch you are on currently
+- <git branch branchname>
+  Eg: <git branch local-dev>
+  Creates a new branch in our local repository. It creates a branch from the source repo which we are currently on. So all commits in that source branch is copied to this new branch.
+- <git branch -m oldbranchname newbranchname>
+  Helps to rename the local repo branch names.
+- <git checkout branchname>
+  Eg: <git checkout dev>
+  Allows us to switch the pointing out branch
 - <git add "filename"> or <git add .>
-  - To add specified or all files to staging area
+  To add specified or all files to staging area before comitting
 - <git rm --cached "filename">
-  - To unstage files from staging area
+  To unstage files from staging area
 - <git commit -m "message">
-  - Commits your changes from staging area to your local repository
+  Commits your changes from staging area to your local repository
 - <git commit --amend>
+- <git stash>
 - <git cherrypick>
-- <git push origin master>
-  - Lets you push your local changes to the central remote repo
+- <git pull origin master>
+  Lets you copy all the files from the master branch of remote repo to your local repo
+- <git push aliasofremoterepo branchname>
+  Eg: <git push origin master>, <git push origin dev>
+  Lets you push your local changes from your local repo to the remote repo branch. Note that origin is  the alias of remote repo.  Give credentials for remote repo if asked while pushing.
 - <git rebase>
-- <git merge>
+- <git merge branchname>
 - <git fetch>
 - <git status>
 - <git log>
-  - Gives the commit history along aith commit hash id, author, commit message and time
+  Gives the commit history along aith commit hash id, author, commit message and time of our current branch
+- <git log branchname>
+  Gives the commit history along aith commit hash id, author, commit message and time of our specified branch
 - <git show commithashid>
-  - commithashid with first 7 to 8 letters of full commit hash id works. Press q to end.
+  commithashid with first 7 to 8 letters of full commit hash id works. Press q to end.
 - <git ls-files>
-  - Shows the files that are tracked by our local git repo. If new file is created and is not yet added to the staging using git add command, then git can't track that new file. Adding it to staging area helps git to start tracking this new files thereafter.
+  Shows the files that are tracked by our local git repo. If new file is created and is not yet added to the staging using git add command, then git can't track that new file. Adding it to staging area helps git to start tracking this new files thereafter.
 
 ![workflow](images/git_basic_commands.png)
