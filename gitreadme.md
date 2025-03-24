@@ -104,9 +104,13 @@ Git is a Distributed Version Control tool. It supports distributed non-linear pa
 - <git fetch>
 - <git status>
 - <git log>
-  Gives the commit history along aith commit hash id, author, commit message and time of our current branch
+  Gives the commit history along with commit hash id, author, commit message and time of our current branch
 - <git log branchname>
-  Gives the commit history along aith commit hash id, author, commit message and time of our specified branch
+  Gives the commit history along with commit hash id, author, commit message and time of our specified branch
+- <git log --oneline>
+  Shows commits logs in single lines
+- <git log branchname --oneline>
+  Shows commits logs of a branch in single lines
 - <git show commithashid>
   commithashid with first 7 to 8 letters of full commit hash id works. Press q to end.
 - <git ls-files>
