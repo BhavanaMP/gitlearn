@@ -84,8 +84,10 @@ Storage space where the projects live. Can be a folder on local computer or can 
 - <git branch branchname>
   Eg: <git branch local-dev>
   Creates a new branch in our local repository. It creates a branch from the source repo which we are currently on. So all commits in that source branch is copied to this new branch.
+- <git branch -m newbranchname>
+  Helps to rename the current local repo branch names.
 - <git branch -m oldbranchname newbranchname>
-  Helps to rename the local repo branch names.
+  Helps to rename the given local repo branch names to new given name.
 - <git branch -m oldbranchname newbranchname>
   <git push alias :oldbranchname newbranchname>
   Helps to rename the branch name in local repo and pushing it to remote repo renames the branch in the remote repo as well. Note that oldbranchname exists in remote repo.
