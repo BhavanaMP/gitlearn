@@ -79,12 +79,18 @@ Git is a Distributed Version Control tool. It supports distributed non-linear pa
 - <git rm --cached "filename">
   - To unstage files from staging area
 - <git commit -m "message">
+  - Commits your changes from staging area to your local repository
+- <git commit --amend>
+- <git cherrypick>
 - <git push origin master>
   - Lets you push your local changes to the central remote repo
 - <git rebase>
 - <git merge>
 - <git fetch>
 - <git status>
-- <git logs>
+- <git log>
+  - Gives the commit history along aith commit hash id, author, commit message and time
+- <git show commithashid>
+  - commithashid with first 7 to 8 letters of full commit hash id works. Press q to end.
 
 ![workflow](images/git_basic_commands.png)
