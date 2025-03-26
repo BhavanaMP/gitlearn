@@ -298,7 +298,8 @@ Jenkins is an open-source automation server used for continuous integration and 
 **Install Jenkins using Docker**
 
 - <docker run -d --name jenkins -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts> # pull the jenkins long term support image and create contaier
-- Go to <https://localhost:8080> to access Jenkins and follow the setup wizard. Give the Admin password that Jenkins display when pulling the image. If you forgot the copy the initial admin Password, then go to the running docker container bash in interactive mode <docker exec -it contianername bash> and go to <cd /var/jenkins_home/secrets> and <cat initialAdminPassword>. You can exit the container using ctrl+c
+- Go to <https://localhost:8080> to access Jenkins and follow the setup wizard. Give the Admin password that Jenkins display when pulling the image. If you forgot the copy the initial admin Password, then go to the running docker container bash in interactive mode <docker exec -it contianername bash> and go to <cd /var/jenkins_home/secrets> and <cat initialAdminPassword>. You can exit the container using exit command.
+- You can give username and pwd for you to login with your creds later on instead of admin default pwd
 - Install initial suggested plugins (Git Plugin (for integrating GitHub, GitLab, etc.), Pipeline Plugin (for writing CI/CD workflows), Docker Plugin (for containerized deployments))
 
 **Create Your First Jenkins Job**
@@ -311,6 +312,8 @@ Jenkins is an open-source automation server used for continuous integration and 
 - Poll SCM
   - Give the cron job command here Eg: <\* \* \* \* \*> This 5 arterisk means run the build when there is a change
 - Click Build Now and check console output.
+
+Note: Jenkins use Groovy script to run pipelines
 
 ### **GitHub Workflow and Actions**
 
