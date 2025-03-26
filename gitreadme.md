@@ -275,14 +275,37 @@ If you cloned the repository using an HTTPS URL (e.g., https://github.com/yourus
 - Push normally using SSH:
   <git push origin main>
 
-**Which One Should You Use on Windows?**
+### **Managing Git Credentials in Windows**
 
-- Use HTTPS if you want a quick setup and don’t mind entering a token occasionally.
-- Use SSH if you want password-free Git operations on Windows, especially if working with multiple repositories frequently.
-  To check which method you're using:
-  <git remote -v>
-  If it shows https://github.com/... → You're using HTTPS.
-  If it shows git@github.com:... → You're using SSH.
+From Aug 2021, Git uses Personal Access Token to authenticate. So, we need to remove the existing creads that were saved before 2021 and add the PAT generated to windows credential manager for passwordless authentication when using https.
+
+1. Open **Credential Manager** → **Windows Credentials** → Find `git:https://github.com`.
+2. Click **Remove** to delete it if using the git hub login password
+
+**Store a Personal Access Token (PAT) Instead of a Password:**
+
+1. Generate a PAT:
+   - Go to **[GitHub → Developer Settings → Personal Access Tokens](https://github.com/settings/tokens)**.
+   - Generate a **fine-grained token** with required permissions.
+2. Use PAT when Git prompts for a password when doing any git operations like clone,pull or push:
+   <git clone https://github.com/your-repo.git>
+   Username: your GitHub username
+   Password: your PAT
+3. Save credentials permanently in windows credential manager:
+   <git config --global credential.helper manager>
+4. Verify Git Credentials Configuration:
+   <git config --list --show-origin> and Check if `credential.helper=manager` is set.
+
+### **What to Do If Your GitHub Personal Access Token (PAT) Expires**
+
+1. Generate a New Token from Github
+2. Update Token in Windows Credential Manager
+3. Clear Old Credentials (If Needed). If Git still uses the old token, clear it: <git credential reject https://github.com> Or manually remove the credential from Credential Manager and re-enter when prompted.
+4. Update Token in Git Config (If Using a Saved Token in Config). If you stored the token in `~/.git-credentials`, update it:  
+   <git credential reject https://github.com>
+   <echo "https://<your-username>:<new-token>@github.com" > ~/.git-credentials>
+5. Test Authentication
+   <git pull origin branch>. If it works, you're good to go!
 
 ### Jenkins
 
